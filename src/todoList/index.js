@@ -116,7 +116,7 @@ const TodoList = () => {
                     );
                   })}
                   <ListItem sx={{ display: 'flex', flexDirection: "row", justifyContent: "space-between" }}>
-                    <Box>Umumi {list.length} tapsiri  Hazir {checked.length} tapsiriq</Box>
+                    <Box>Ümumi {list.length} tapşırıq  Hazır {checked.length} tapşırıq</Box>
                     <Button variant="text" size='small' onClick={deleteAll}  >Hamisini sil</Button>
                   </ListItem>
                 </List>
