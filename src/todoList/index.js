@@ -75,7 +75,7 @@ const TodoList = () => {
               <Box sx={{ fontSize: 64, fontFamily: 'Monospace', fontWeight: 'bold', paddingY: "16px", color: 'white' }} >TODO</Box>
 
               <Box sx={{ bgcolor: "background.paper", marginBottom: '16px', height: "64px", display: 'flex', justifyContent: 'center', alignItems: 'center', justifyContent: 'space-around' }}>
-                <Input name='inp' value={inp} onChange={(e) => { setInp(e.target.value) }} placeholder='Tapşırığı daxil edin' sx={{ width: '70%', height: "100%" }} />
+                <Input name='inp' value={inp} onChange={(e) => { setInp(e.target.value) }} placeholder='Tapşırığı daxil edin' sx={{ width: '70%', height: "100%",display:"flex",flexDirection:"row" }} />
                 <AddIcon onClick={addTasks} sx={{ color: "white", width: '40px', height: '40px', bgcolor: '#2979ff' }} />
               </Box>
 
@@ -110,7 +110,7 @@ const TodoList = () => {
                               onClick={() => setIndexs((prevIndexs) => [...prevIndexs, item.id])}
                             />
                           </ListItemIcon>
-                          <ListItemText id={labelId} primary={item.text} sx={indexs.includes(item.id) ? { textDecoration: "line-through" } : null} />
+                          <ListItemText style={{overflow:"hidden"}} id={labelId}  primary={item.text} sx={indexs.includes(item.id)   ? { textDecoration: "line-through" } : null } />
                         </ListItemButton>
                       </ListItem>
                     );
