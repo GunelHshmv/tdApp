@@ -33,6 +33,7 @@ const TodoList = () => {
   };
 
   const handleToggle = (itemId) => () => {
+    console.log(checked.indexOf(itemId))
     const currentIndex = checked.indexOf(itemId);
     const newChecked = [...checked];
     if (currentIndex === -1) {
@@ -56,13 +57,7 @@ const TodoList = () => {
     setChecked((prevChecked) => prevChecked.filter((itemIdChecked) => itemIdChecked !== itemId));
     setIndexs((prevIndexs) => prevIndexs.filter((index) => index !== itemId));
   };
-  const handleMouseEnter = (itemId) => {
-    setHoveredItemId(itemId);
-  };
-  
-  const handleMouseLeave = () => {
-    setHoveredItemId(null);
-  };
+
 
   return (
     <div>
@@ -86,7 +81,7 @@ const TodoList = () => {
 
                     return (
                       <ListItem
-                        sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative'}}
+                        sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative',"&:hover MuiListItemSecondaryAction-root .MuiButtonBase-root":{display:"block"}}}
                         key={item.id}
                         secondaryAction={
                           <IconButton edge="end" aria-label="comments" sx={{ top: '50%',right: 0,transform: 'translateY(-50%)', position: 'absolute',visibility: hoveredItemId === item.id ? 'visible' : 'hidden'}} >
@@ -95,8 +90,7 @@ const TodoList = () => {
                         }
                         disablePadding
                       >
-                        <ListItemButton  role={undefined} onClick={handleToggle(item.id)} dense  onMouseEnter={() => handleMouseEnter(item.id)}
-    onMouseLeave={() => handleMouseLeave(item.id)}>
+                        <ListItemButton  role={undefined} onClick={handleToggle(item.id)} dense  >
                           <ListItemIcon >
                             <Checkbox sx={{color:"blue"}}
                             {...label}
@@ -116,8 +110,8 @@ const TodoList = () => {
                     );
                   })}
                   <ListItem sx={{ display: 'flex', flexDirection: "row", justifyContent: "space-between" }}>
-                    <Box>Ümumi {list.length} tapşırıq  Hazır {checked.length} tapşırıq</Box>
-                    <Button variant="text" size='small' onClick={deleteAll}  >Hamisini sil</Button>
+                    <Box>Ümumi: {list.length} tapşırıq  Hazır: {checked.length} tapşırıq</Box>
+                    <Button variant="text" size='small' onClick={deleteAll}  >Hamısını Sil</Button>
                   </ListItem>
                 </List>
               </Box>
