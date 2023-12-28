@@ -81,10 +81,16 @@ const TodoList = () => {
 
                     return (
                       <ListItem
-                        sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative',"&:hover MuiListItemSecondaryAction-root .MuiButtonBase-root":{display:"block"}}}
+                        sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative',
+                        ':hover': {
+                          '.MuiListItemSecondaryAction-root .MuiButtonBase-root': {
+                            display: 'block',
+                          },
+                        },
+                      }}
                         key={item.id}
                         secondaryAction={
-                          <IconButton edge="end" aria-label="comments" sx={{ top: '50%',right: 0,transform: 'translateY(-50%)', position: 'absolute',visibility: hoveredItemId === item.id ? 'visible' : 'hidden'}} >
+                          <IconButton edge="end" aria-label="comments" sx={{ top: '50%',right: 0,transform: 'translateY(-50%)', position: 'absolute',display:"none"}} >
                             <DeleteIcon onClick={() => deleteTask(item.id)} sx={{ color: 'red' }} />
                           </IconButton>
                         }
