@@ -126,18 +126,18 @@ const TodoList = () => {
                   <div>
                   <div className='first' style={{width:"120px",height:"50px",backgroundColor:"#017CFF",position:"absolute",zIndex:2,left:"240px",display:"flex",flexDirection:"column",top:"40px",borderRadius:"10px"}}>
                     <div style={{margin:"10px",display:"flex",gap:"8px",flexDirection:"column"}}>
-                    <div style={{width:"48px",height:"10px",backgroundColor:"#71DFFE",borderRadius:"4px"}}></div>
+                    <div style={{width:"48px",height:"10px",backgroundColor:"#9EE0F5",borderRadius:"4px"}}></div>
                     <div style={{width:"80px", height:"10px",backgroundColor:"white",borderRadius:"4px"}}></div>
                     </div>
                   </div>
                   <div className='second' style={{backgroundColor:"white",width:"120px",height:"140px",position:"absolute",zIndex:2,left:"240px",display:"flex",flexDirection:"column",top:"100px",borderRadius:"10px"}}>
                   <div style={{margin:"12px",display:"flex",gap:"8px",flexDirection:"column"}}>
-                    <div style={{width:"48px",height:"10px",backgroundColor:"#71DFFE",borderRadius:"4px"}}></div>
-                    <div style={{width:"80px", height:"10px",backgroundColor:"#ADDEEC",borderRadius:"4px"}}></div>
-                    <div style={{width:"48px",height:"10px",backgroundColor:"#71DFFE",borderRadius:"4px"}}></div>
-                    <div style={{width:"80px", height:"10px",backgroundColor:"#ADDEEC",borderRadius:"4px"}}></div>
-                    <div style={{width:"48px",height:"10px",backgroundColor:"#71DFFE",borderRadius:"4px"}}></div>
-                    <div style={{width:"80px", height:"10px",backgroundColor:"#ADDEEC",borderRadius:"4px"}}></div>
+                    <div style={{width:"48px",height:"10px",backgroundColor:"#9EE0F5",borderRadius:"4px"}}></div>
+                    <div style={{width:"80px", height:"10px",backgroundColor:"#D5E4E9",borderRadius:"4px"}}></div>
+                    <div style={{width:"48px",height:"10px",backgroundColor:"#9EE0F5",borderRadius:"4px"}}></div>
+                    <div style={{width:"80px", height:"10px",backgroundColor:"#D5E4E9",borderRadius:"4px"}}></div>
+                    <div style={{width:"48px",height:"10px",backgroundColor:"#9EE0F5",borderRadius:"4px"}}></div>
+                    <div style={{width:"80px", height:"10px",backgroundColor:"#D5E4E9",borderRadius:"4px"}}></div>
                     </div>
                   </div>
                   <div className='rounded' style={{width:"200px",height:"180px",zIndex:-1, borderRadius:"50%",backgroundColor:'#DCE5E9'}} ></div>
