@@ -21,7 +21,6 @@ const TodoList = () => {
   const [inp, setInp] = useState("");
   const [checked, setChecked] = useState([]);
   const [indexs, setIndexs] = useState([]);
-  const [hoveredItemId, setHoveredItemId] = useState(null);
 
   useEffect(() => {
   localStorage.setItem("lists",JSON.stringify(list))
@@ -65,13 +64,7 @@ const TodoList = () => {
     setChecked((prevChecked) => prevChecked.filter((itemIdChecked) => itemIdChecked !== itemId));
     setIndexs((prevIndexs) => prevIndexs.filter((index) => index !== itemId));
   };
-  const handleMouseEnter = (itemId) => {
-    setHoveredItemId(itemId);
-  };
-  
-  const handleMouseLeave = () => {
-    setHoveredItemId(null);
-  };
+
 
   return (
     <div>
@@ -94,17 +87,29 @@ const TodoList = () => {
                   list.length>0?(list.map((item) => {
                   const labelId = `checkbox-list-label-${item.id}`;
                    return(<ListItem
-                      sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative'}}
+                      sx={{ borderBottom: 1, borderColor: 'grey.500', width: '580px' ,position: 'relative', ':hover': {
+                        '.MuiListItemSecondaryAction-root .MuiButtonBase-root': {
+                          display: 'block'
+                        },
+                      },}}
                       key={item.id}
-                      secondaryAction={
-                        <IconButton edge="end" aria-label="comments" sx={{ top: '50%',right: 0,transform: 'translateY(-50%)', position: 'absolute',visibility: hoveredItemId === item.id ? 'visible' : 'hidden'}} >
-                          <DeleteIcon onClick={() => deleteTask(item.id)} sx={{ color: 'red' }} />
-                        </IconButton>
+                      secondaryAction={<IconButton
+                      edge="end"
+                       aria-label="comments"
+                       sx={{
+                       top: '50%',
+                       right: 0,
+                       transform: 'translateY(-50%)',
+                       position: 'absolute',
+                      display:"none"
+                          }}
+                      >
+                      <DeleteIcon onClick={() => deleteTask(item.id)} sx={{ color: 'red' }} />
+                      </IconButton>
                       }
                       disablePadding
                     >
-                      <ListItemButton  role={undefined} onClick={handleToggle(item.id)} dense  onMouseEnter={() => handleMouseEnter(item.id)}
-  onMouseLeave={() => handleMouseLeave(item.id)}>
+                      <ListItemButton  role={undefined} onClick={handleToggle(item.id)} dense >
                         <ListItemIcon >
                           <Checkbox sx={{color:"blue"}}
                           {...label}
