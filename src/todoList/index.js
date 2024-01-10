@@ -153,7 +153,7 @@ const TodoList = () => {
                 </div>)
                 }
                 <ListItem sx={{ display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
-                  <Box>Umumi {list.length} tapşırıq  Hazır {checked.length} tapşırıq</Box>
+                <Box>Ümumi tapşırıq:{list.length}   Hazır tapşırıq:{checked.length} </Box>
                   <Button variant="text" size='small' onClick={deleteAll}  >Hamisini sil</Button>
                 </ListItem>
               </List>
